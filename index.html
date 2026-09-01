@@ -24,9 +24,120 @@
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#inicio" class="logo">C & J</a> <!-- Pon aquí las iniciales de los novios -->
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#itinerario">Itinerario</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#regalos">Regalos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PORTADA (HERO) -->
+<header id="inicio" class="hero">
+  <div class="hero-content">
+    <h1>Christopher & Jimena</h1>
+    <p class="fecha">Sábado, 19 de Diciembre de 2026</p>
+    <a href="#itinerario" class="btn">Ver detalles</a>
+  </div>
+</header>
+
+<!-- SECCIÓN ITINERARIO -->
+<section id="itinerario" class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo-seccion">Nuestro Gran Día</h2>
+    <p class="subtitulo">Los esperamos para compartir estos momentos inolvidables.</p>
+
+    <div class="linea-tiempo">
+      <!-- Evento 1 -->
+      <div class="evento">
+        <div class="hora">15:30 hrs</div>
+        <div class="punto"></div>
+        <div class="detalle">
+          <h3>Llegada de invitados</h3>
+          <p>Recepción en el recinto con un matecito o café para el frío.</p>
+        </div>
+      </div>
+
+      <!-- Evento 2 -->
+      <div class="evento">
+        <div class="hora">16:30 hrs</div>
+        <div class="punto"></div>
+        <div class="detalle">
+          <h3>Ceremonia</h3>
+          <p>Daremos el "Sí" al aire libre, rodeados de naturaleza.</p>
+        </div>
+      </div>
+
+      <!-- Evento 3 -->
+      <div class="evento">
+        <div class="hora">18:00 hrs</div>
+        <div class="punto"></div>
+        <div class="detalle">
+          <h3>Cóctel y Fotos</h3>
+          <p>Música en vivo, picoteo campestre y sesión de fotos.</p>
+        </div>
+      </div>
+
+      <!-- Evento 4 -->
+      <div class="evento">
+        <div class="hora">19:30 hrs</div>
+        <div class="punto"></div>
+        <div class="detalle">
+          <h3>Cena y Fiesta</h3>
+          <p>¡A comer rico, brindar y celebrar hasta que las velas no ardan!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN UBICACIÓN -->
+<section id="ubicacion" class="seccion fondo-alterno">
+  <div class="contenedor">
+    <h2 class="titulo-seccion">Ubicación</h2>
+    <p class="subtitulo">Acompáñanos a celebrar en el hermoso entorno de Lonquimay.</p>
+
+    <div class="grid-ubicacion">
+      <!-- Tarjeta 1: La Ceremonia -->
+      <div class="tarjeta-mapa">
+        <h3>La Ceremonia</h3>
+        <p><strong>Lugar:</strong> Iglesia de Lonquimay</p>
+        <div class="mapa-contenedor">
+          <!-- Iframe sin API key, usando el Plus Code -->
+          <iframe
+            src="https://maps.google.com/maps?q=GJWG%2B5F%20Lonquimay&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+        <div class="botones-gps">
+          <a href="https://maps.google.com/?q=GJWG%2B5F,Lonquimay" target="_blank" class="btn btn-gps google-maps">Ver en Google Maps</a>
+          <a href="https://waze.com/ul?q=GJWG%2B5F%20Lonquimay" target="_blank" class="btn btn-gps waze">Ir con Waze</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: La Celebración -->
+      <div class="tarjeta-mapa">
+        <h3>La Fiesta</h3>
+        <p><strong>Lugar:</strong> Cervecería Local</p>
+        <div class="mapa-contenedor">
+          <iframe
+            src="https://maps.google.com/maps?q=HJ4P%2BV6%20Lonquimay&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+        <div class="botones-gps">
+          <a href="https://maps.google.com/?q=HJ4P%2BV6,Lonquimay" target="_blank" class="btn btn-gps google-maps">Ver en Google Maps</a>
+          <a href="https://waze.com/ul?q=HJ4P%2BV6%20Lonquimay" target="_blank" class="btn btn-gps waze">Ir con Waze</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 </body>
 

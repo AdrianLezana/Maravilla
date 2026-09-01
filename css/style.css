@@ -245,3 +245,297 @@ textarea {
   }
 }
 
+/* VARIABLES DE DISEÑO (Fáciles de modificar) */
+/* VARIABLES DE DISEÑO (Estilo Rústico / Yellowstone) */
+:root {
+  --color-primario: #5b3e2b; /* Marrón cuero/madera */
+  --color-secundario: #2c422f; /* Verde pino/araucaria */
+  --color-fondo: #f9f6f0; /* Beige rústico suave */
+  --color-texto: #333333;
+  --fuente-titulos: 'Georgia', serif; /* Da un toque clásico/elegante */
+  --fuente-texto: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* COMPORTAMIENTO GENERAL */
+html {
+  /* Esto hace que al hacer clic en el menú, la página baje suavemente */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  background-color: var(--color-fondo);
+}
+
+/* NAVEGACIÓN */
+.navbar {
+  position: fixed; /* Se queda pegada arriba al hacer scroll */
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000; /* Asegura que siempre esté por encima del resto */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--color-primario);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* PORTADA (HERO) */
+.hero {
+  height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Aquí configuramos la imagen de fondo con un oscurecimiento sutil para que se lea el texto */
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/fondo-boda.jpg') center/cover;
+  color: white;
+}
+
+.hero h1 {
+  font-family: var(--fuente-titulos);
+  font-size: 4rem;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+}
+
+.fecha {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--color-primario);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #4a5750;
+}
+
+/* ESTILOS GENERALES DE SECCIONES */
+.seccion {
+  padding: 80px 20px;
+  color: var(--color-texto);
+}
+
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo-seccion {
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #666;
+  font-style: italic;
+}
+
+/* LÍNEA DE TIEMPO (ITINERARIO) */
+.linea-tiempo {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* La línea vertical central */
+.linea-tiempo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20%; /* Posición de la línea */
+  width: 2px;
+  background-color: var(--color-primario);
+}
+
+.evento {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.hora {
+  width: 20%;
+  padding-right: 20px;
+  text-align: right;
+  font-weight: bold;
+  color: var(--color-secundario);
+  padding-top: 5px;
+}
+
+.punto {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-fondo);
+  border: 3px solid var(--color-primario);
+  border-radius: 50%;
+  position: absolute;
+  left: 20%;
+  transform: translateX(-50%);
+  top: 5px;
+  z-index: 1;
+}
+
+.detalle {
+  width: 80%;
+  padding-left: 40px;
+}
+
+.detalle h3 {
+  margin: 0 0 10px 0;
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+  font-size: 1.3rem;
+}
+
+.detalle p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Adaptación para pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+  .linea-tiempo::before { left: 15px; }
+  .hora {
+    width: auto;
+    position: absolute;
+    top: -25px;
+    left: 40px;
+    text-align: left;
+  }
+  .punto { left: 15px; top: 10px; }
+  .detalle { width: 100%; padding-left: 40px; margin-top: 15px; }
+}
+
+/* UBICACIÓN */
+.fondo-alterno {
+  background-color: white; /* Da un descanso visual al beige rústico */
+}
+
+.grid-ubicacion {
+  display: grid;
+  grid-template-columns: 1fr; /* En celular, 1 columna (una tarjeta sobre la otra) */
+  gap: 30px;
+}
+
+/* Solo si la pantalla es más grande (Tablet/PC), mostramos 2 columnas */
+@media (min-width: 768px) {
+  .grid-ubicacion {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tarjeta-mapa {
+  background-color: var(--color-fondo);
+  border: 1px solid #e0d8c3;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.tarjeta-mapa h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+  margin-top: 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--color-primario);
+  padding-bottom: 10px;
+}
+
+.mapa-contenedor {
+  margin: 15px 0;
+  border-radius: 6px;
+  overflow: hidden; /* Evita que el mapa se salga de los bordes curvos */
+  border: 2px solid var(--color-primario); /* Marco tipo madera para el mapa */
+}
+
+/* BOTONES GPS */
+.botones-gps {
+  display: flex;
+  flex-direction: column; /* Apilados verticalmente por defecto */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Si es tablet/PC, botones uno al lado del otro */
+@media (min-width: 480px) {
+  .botones-gps {
+    flex-direction: row;
+  }
+  .btn-gps {
+    flex: 1; /* Ocupan el 50% cada uno */
+  }
+}
+
+.btn-gps {
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s;
+}
+
+.btn-gps:hover {
+  opacity: 0.8;
+}
+
+.google-maps {
+  background-color: #4285F4;
+}
+
+.waze {
+  background-color: #33ccff;
+  color: #000; /* Letra negra porque el fondo es claro */
+}
