@@ -539,3 +539,26 @@ body {
   background-color: #33ccff;
   color: #000; /* Letra negra porque el fondo es claro */
 }
+
+/* ADAPTACIÓN MÓVIL PARA LA NAVEGACIÓN */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .logo {
+    margin-bottom: 8px;
+  }
+
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 5px; /* Amplía el área táctil para los dedos */
+  }
+}
