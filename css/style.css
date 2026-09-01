@@ -246,10 +246,13 @@ textarea {
 }
 
 /* VARIABLES DE DISEÑO (Fáciles de modificar) */
+/* VARIABLES DE DISEÑO (Estilo Rústico / Yellowstone) */
 :root {
-  --color-primario: #5c6c64; /* Un verde salvia elegante */
-  --color-fondo: #fdfdfd;
-  --fuente-titulos: 'Georgia', serif;
+  --color-primario: #5b3e2b; /* Marrón cuero/madera */
+  --color-secundario: #2c422f; /* Verde pino/araucaria */
+  --color-fondo: #f9f6f0; /* Beige rústico suave */
+  --color-texto: #333333;
+  --fuente-titulos: 'Georgia', serif; /* Da un toque clásico/elegante */
   --fuente-texto: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -347,4 +350,108 @@ body {
 
 .btn:hover {
   background-color: #4a5750;
+}
+
+/* ESTILOS GENERALES DE SECCIONES */
+.seccion {
+  padding: 80px 20px;
+  color: var(--color-texto);
+}
+
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo-seccion {
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #666;
+  font-style: italic;
+}
+
+/* LÍNEA DE TIEMPO (ITINERARIO) */
+.linea-tiempo {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* La línea vertical central */
+.linea-tiempo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20%; /* Posición de la línea */
+  width: 2px;
+  background-color: var(--color-primario);
+}
+
+.evento {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.hora {
+  width: 20%;
+  padding-right: 20px;
+  text-align: right;
+  font-weight: bold;
+  color: var(--color-secundario);
+  padding-top: 5px;
+}
+
+.punto {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-fondo);
+  border: 3px solid var(--color-primario);
+  border-radius: 50%;
+  position: absolute;
+  left: 20%;
+  transform: translateX(-50%);
+  top: 5px;
+  z-index: 1;
+}
+
+.detalle {
+  width: 80%;
+  padding-left: 40px;
+}
+
+.detalle h3 {
+  margin: 0 0 10px 0;
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+  font-size: 1.3rem;
+}
+
+.detalle p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Adaptación para pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+  .linea-tiempo::before { left: 15px; }
+  .hora {
+    width: auto;
+    position: absolute;
+    top: -25px;
+    left: 40px;
+    text-align: left;
+  }
+  .punto { left: 15px; top: 10px; }
+  .detalle { width: 100%; padding-left: 40px; margin-top: 15px; }
 }
