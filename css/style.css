@@ -455,3 +455,87 @@ body {
   .punto { left: 15px; top: 10px; }
   .detalle { width: 100%; padding-left: 40px; margin-top: 15px; }
 }
+
+/* UBICACIÓN */
+.fondo-alterno {
+  background-color: white; /* Da un descanso visual al beige rústico */
+}
+
+.grid-ubicacion {
+  display: grid;
+  grid-template-columns: 1fr; /* En celular, 1 columna (una tarjeta sobre la otra) */
+  gap: 30px;
+}
+
+/* Solo si la pantalla es más grande (Tablet/PC), mostramos 2 columnas */
+@media (min-width: 768px) {
+  .grid-ubicacion {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tarjeta-mapa {
+  background-color: var(--color-fondo);
+  border: 1px solid #e0d8c3;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.tarjeta-mapa h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+  margin-top: 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--color-primario);
+  padding-bottom: 10px;
+}
+
+.mapa-contenedor {
+  margin: 15px 0;
+  border-radius: 6px;
+  overflow: hidden; /* Evita que el mapa se salga de los bordes curvos */
+  border: 2px solid var(--color-primario); /* Marco tipo madera para el mapa */
+}
+
+/* BOTONES GPS */
+.botones-gps {
+  display: flex;
+  flex-direction: column; /* Apilados verticalmente por defecto */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Si es tablet/PC, botones uno al lado del otro */
+@media (min-width: 480px) {
+  .botones-gps {
+    flex-direction: row;
+  }
+  .btn-gps {
+    flex: 1; /* Ocupan el 50% cada uno */
+  }
+}
+
+.btn-gps {
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s;
+}
+
+.btn-gps:hover {
+  opacity: 0.8;
+}
+
+.google-maps {
+  background-color: #4285F4;
+}
+
+.waze {
+  background-color: #33ccff;
+  color: #000; /* Letra negra porque el fondo es claro */
+}
