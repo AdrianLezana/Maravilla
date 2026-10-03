@@ -248,9 +248,9 @@ textarea {
 /* VARIABLES DE DISEÑO (Fáciles de modificar) */
 /* VARIABLES DE DISEÑO (Estilo Rústico / Yellowstone) */
 :root {
-  --color-primario: #5b3e2b; /* Marrón cuero/madera */
+  --color-primario: #4A2E35; /* Marrón cuero/madera */
   --color-secundario: #2c422f; /* Verde pino/araucaria */
-  --color-fondo: #f9f6f0; /* Beige rústico suave */
+  --color-fondo: #ECE2CF; /* Beige rústico suave */
   --color-texto: #333333;
   --fuente-titulos: 'Georgia', serif; /* Da un toque clásico/elegante */
   --fuente-texto: 'Helvetica Neue', Arial, sans-serif;
@@ -266,6 +266,72 @@ body {
   margin: 0;
   font-family: var(--fuente-texto);
   background-color: var(--color-fondo);
+}
+
+/* DETALLES DECORATIVOS ENTRE SECCIONES */
+.separador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 34px;
+  color: var(--color-primario);
+  background-color: var(--color-fondo);
+}
+
+.separador-hero {
+  position: relative;
+  z-index: 2;
+  margin-top: -17px;
+  background-color: transparent;
+}
+
+.separador-hero .separador-centro {
+  background-color: var(--color-fondo);
+}
+
+.separador::before,
+.separador::after {
+  content: "";
+  width: min(22vw, 170px);
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(74, 46, 53, 0.45));
+}
+
+.separador::after {
+  background: linear-gradient(to left, transparent, rgba(74, 46, 53, 0.45));
+}
+
+.separador-rama {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.separador-rama.espejo {
+  transform: scaleX(-1);
+}
+
+.separador-centro {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(74, 46, 53, 0.55);
+  border-radius: 50%;
+  background-color: var(--color-fondo);
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.separador-claro {
+  background-color: white;
+}
+
+.separador-claro .separador-centro {
+  background-color: white;
 }
 
 /* NAVEGACIÓN */
@@ -318,7 +384,7 @@ body {
   justify-content: center;
   text-align: center;
   /* Aquí configuramos la imagen de fondo con un oscurecimiento sutil para que se lea el texto */
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/fondo-boda.jpg') center/cover;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/fondo-boda.jpeg') center/cover;
   color: white;
 }
 
@@ -349,7 +415,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #4a5750;
+  background-color: #81515D;
 }
 
 /* ESTILOS GENERALES DE SECCIONES */
@@ -369,6 +435,16 @@ body {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 10px;
+}
+
+.titulo-seccion::after {
+  content: "✧";
+  display: block;
+  margin-top: 8px;
+  color: var(--color-primario);
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  opacity: 0.65;
 }
 
 .subtitulo {
@@ -540,6 +616,136 @@ body {
   color: #000; /* Letra negra porque el fondo es claro */
 }
 
+/* REGALOS */
+.contenedor-regalos {
+  max-width: 1000px;
+}
+
+.tarjeta-transferencia {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  padding: 28px;
+  background-color: white;
+  border: 1px solid #e0d8c3;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta-transferencia h3,
+.tarjeta-regalo h3 {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+}
+
+.tarjeta-transferencia h3 {
+  font-size: 1.6rem;
+}
+
+.nota-transferencia {
+  margin: 8px 0 22px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.campos-transferencia {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.campos-transferencia label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--color-primario);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.campos-transferencia input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #cfc4b0;
+  border-radius: 4px;
+  background-color: #fffdf8;
+  color: var(--color-texto);
+  font: inherit;
+  font-weight: normal;
+}
+
+.campos-transferencia input:focus {
+  outline: 2px solid var(--color-secundario);
+  outline-offset: 2px;
+}
+
+.btn-copiar {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.estado-copiado {
+  min-height: 1.5em;
+  margin: 12px 0 0;
+  color: var(--color-secundario);
+  font-weight: bold;
+}
+
+.grid-regalos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-regalo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  padding: 22px;
+  background-color: white;
+  border: 1px solid #e0d8c3;
+  border-top: 4px solid var(--color-primario);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-regalo h3 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.tarjeta-regalo p {
+  margin: 18px 0 0;
+  color: var(--color-primario);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .grid-regalos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .tarjeta-transferencia {
+    padding: 20px;
+  }
+
+  .campos-transferencia,
+  .grid-regalos {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-regalo {
+    min-height: 120px;
+  }
+}
+
 /* ADAPTACIÓN MÓVIL PARA LA NAVEGACIÓN */
 @media (max-width: 768px) {
   .nav-container {
@@ -561,4 +767,125 @@ body {
     font-size: 0.85rem;
     padding: 5px; /* Amplía el área táctil para los dedos */
   }
+}
+
+/* SECCIÓN REGALOS */
+.tarjeta-transferencia {
+  background-color: white;
+  border: 1px solid #d4c8b0;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-transferencia h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.datos-cuenta {
+  text-align: left;
+  background-color: var(--color-fondo);
+  padding: 18px 25px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--color-primario);
+}
+
+.datos-cuenta p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+}
+
+.btn-copiar {
+  cursor: pointer;
+  border: none;
+  font-family: var(--fuente-texto);
+  font-weight: bold;
+}
+
+.mensaje-copiado {
+  display: none;
+  color: var(--color-secundario);
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.subtitulo-experiencias {
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+/* GRID DE EXPERIENCIAS */
+.grid-regalos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .grid-regalos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-regalos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tarjeta-regalo {
+  background-color: white;
+  border: 1px solid #d4c8b0;
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-regalo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.icono-regalo {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.tarjeta-regalo h4 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+}
+
+.temporada {
+  color: #777;
+  font-size: 0.85rem;
+  margin: 0 0 12px 0;
+}
+
+.precio-ref {
+  display: inline-block;
+  background-color: var(--color-fondo);
+  color: var(--color-secundario);
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin: 0;
 }

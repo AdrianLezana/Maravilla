@@ -27,7 +27,7 @@
 <!-- BARRA DE NAVEGACIÓN -->
 <nav class="navbar">
   <div class="nav-container">
-    <a href="#inicio" class="logo">C & J</a> <!-- Pon aquí las iniciales de los novios -->
+    <a href="#inicio" class="logo">C & J</a> <!-- Iniciales de los novios -->
     <ul class="nav-links">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#itinerario">Itinerario</a></li>
@@ -46,6 +46,12 @@
   </div>
 </header>
 
+<div class="separador separador-hero" aria-hidden="true">
+  <span class="separador-rama">❧</span>
+  <span class="separador-centro">♥</span>
+  <span class="separador-rama espejo">❧</span>
+</div>
+
 <!-- SECCIÓN ITINERARIO -->
 <section id="itinerario" class="seccion">
   <div class="contenedor">
@@ -55,46 +61,62 @@
     <div class="linea-tiempo">
       <!-- Evento 1 -->
       <div class="evento">
-        <div class="hora">15:30 hrs</div>
+        <div class="hora">12:00 hrs</div>
         <div class="punto"></div>
         <div class="detalle">
-          <h3>Llegada de invitados</h3>
-          <p>Recepción en el recinto con un matecito o café para el frío.</p>
+          <h3>Llegada e ingreso de invitados</h3>
+          <p>Iglesia San Sebastián de Lonquimay</p>
         </div>
       </div>
 
       <!-- Evento 2 -->
       <div class="evento">
-        <div class="hora">16:30 hrs</div>
+        <div class="hora">12:15 a 12:25 hrs</div>
         <div class="punto"></div>
         <div class="detalle">
-          <h3>Ceremonia</h3>
-          <p>Daremos el "Sí" al aire libre, rodeados de naturaleza.</p>
+          <h3>Ingreso del cortejo nupcial</h3>
+          <p>Padrinos, damas de honor y familiares</p>
         </div>
       </div>
 
       <!-- Evento 3 -->
       <div class="evento">
-        <div class="hora">18:00 hrs</div>
+        <div class="hora">12:30 a 12:40 hrs</div>
         <div class="punto"></div>
         <div class="detalle">
-          <h3>Cóctel y Fotos</h3>
-          <p>Música en vivo, picoteo campestre y sesión de fotos.</p>
+          <h3>Ingreso de la Novia</h3>
         </div>
       </div>
 
       <!-- Evento 4 -->
       <div class="evento">
-        <div class="hora">19:30 hrs</div>
+        <div class="hora">12:45 hrs</div>
         <div class="punto"></div>
         <div class="detalle">
-          <h3>Cena y Fiesta</h3>
-          <p>¡A comer rico, brindar y celebrar hasta que las velas no ardan!</p>
+          <h3>Inicio de ceremonia religiosa</h3>
+          <p>Celebración del matrimonio en el templo</p>
+        </div>
+      </div>
+
+      <!-- Evento 5 -->
+      <div class="evento">
+        <div class="hora">13:50 a 14:00 hrs</div>
+        <div class="punto"></div>
+        <div class="detalle">
+          <h3>Término de la ceremonia</h3>
+          <p>Primero hacen su salida los invitados y luego los recién casados.</p>
+          <p><em>Posterior a la salida, los invitamos a trasladarse a la Cervecería Lonquimay.</em></p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="separador separador-claro" aria-hidden="true">
+  <span class="separador-rama">❧</span>
+  <span class="separador-centro">♥</span>
+  <span class="separador-rama espejo">❧</span>
+</div>
 
 <!-- SECCIÓN UBICACIÓN -->
 <section id="ubicacion" class="seccion fondo-alterno">
@@ -138,6 +160,138 @@
     </div>
   </div>
 </section>
+
+<!-- SECCIÓN REGALOS -->
+<section id="regalos" class="seccion">
+  <div class="contenedor contenedor-regalos">
+    <h2 class="titulo-seccion">Lista de Regalos y Deseos</h2>
+    <p class="subtitulo">Si nos quieres hacer un regalo, aquí te damos algunas ideas, o si es más cómodo solo transferir un monto, lo puedes hacer a la siguiente cuenta:</p>
+
+    <div class="tarjeta-transferencia">
+      <h3>Transferencia bancaria</h3>
+      <p class="nota-transferencia">Los datos son ejemplos editables; reemplázalos por los datos reales de la cuenta.</p>
+      <div class="campos-transferencia">
+        <label>
+          <span>Titular</span>
+          <input type="text" data-dato-transferencia value="Nombre del titular">
+        </label>
+        <label>
+          <span>RUT</span>
+          <input type="text" data-dato-transferencia value="12.345.678-9">
+        </label>
+        <label>
+          <span>Banco</span>
+          <input type="text" data-dato-transferencia value="Nombre del banco">
+        </label>
+        <label>
+          <span>Tipo de cuenta</span>
+          <input type="text" data-dato-transferencia value="Cuenta corriente">
+        </label>
+        <label>
+          <span>N° de Cuenta</span>
+          <input type="text" data-dato-transferencia value="12345678">
+        </label>
+        <label>
+          <span>Correo</span>
+          <input type="email" data-dato-transferencia value="correo@ejemplo.cl">
+        </label>
+      </div>
+      <button class="btn btn-copiar" id="copiar-datos" type="button">Copiar datos de transferencia</button>
+      <p class="estado-copiado" id="estado-copiado" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="grid-regalos">
+      <article class="tarjeta-regalo">
+        <h3>Ticket dobles ski Corralco temporada 2027</h3>
+        <p>Ref. $120.000</p>
+      </article>
+      <article class="tarjeta-regalo">
+        <h3>Ticket dobles Ski Batea Mahuida temporada 2027</h3>
+        <p>Ref. $80.000</p>
+      </article>
+      <article class="tarjeta-regalo">
+        <h3>Alojamiento matrimonial con pase a piscinas termales, Parque termal Menetué</h3>
+        <p>Ref. promo $150.000</p>
+      </article>
+      <article class="tarjeta-regalo">
+        <h3>Cena / almuerzo para dos restaurante Mya Malalcahuello</h3>
+        <p>Ref. $55.000</p>
+      </article>
+      <article class="tarjeta-regalo">
+        <h3>Tabla para compartir y bebestibles Cervecería Lonquimay</h3>
+        <p>Ref. $30.000</p>
+      </article>
+      <article class="tarjeta-regalo">
+        <h3>Entrada doble piscina Araucaria, termas Malleco</h3>
+        <p>Ref. promo $45.000</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+  const botonCopiar = document.getElementById("copiar-datos");
+  const estadoCopiado = document.getElementById("estado-copiado");
+
+  function copiarConSeleccion(texto) {
+    const campoTemporal = document.createElement("textarea");
+    campoTemporal.value = texto;
+    campoTemporal.setAttribute("readonly", "");
+    campoTemporal.style.position = "absolute";
+    campoTemporal.style.left = "-9999px";
+    document.body.appendChild(campoTemporal);
+
+    try {
+      campoTemporal.select();
+      return document.execCommand("copy");
+    } catch {
+      return false;
+    } finally {
+      campoTemporal.remove();
+    }
+  }
+
+  botonCopiar.addEventListener("click", async () => {
+    const campos = Array.from(document.querySelectorAll("[data-dato-transferencia]"));
+    const datos = campos.map((campo) => `${campo.previousElementSibling.textContent}: ${campo.value}`).join("\n");
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(datos);
+      } else if (!copiarConSeleccion(datos)) {
+        throw new Error("El navegador no permitió copiar los datos.");
+      }
+
+      estadoCopiado.textContent = "Datos copiados al portapapeles.";
+    } catch (error) {
+      if (navigator.clipboard && window.isSecureContext && copiarConSeleccion(datos)) {
+        estadoCopiado.textContent = "Datos copiados al portapapeles.";
+      } else {
+        estadoCopiado.textContent = "No se pudieron copiar los datos. Selecciónalos y cópialos manualmente.";
+      }
+    }
+  });
+</script>
+
+<script>
+  function copiarDatos() {
+    const texto = `Datos de Transferencia:
+Titular: Nombre Novio o Novia
+RUT: 12.345.678-9
+Banco: Banco Estado
+Tipo: Cuenta Corriente
+N°: 123456789
+Correo: contacto@correo.com`;
+
+    navigator.clipboard.writeText(texto).then(() => {
+      const msj = document.getElementById('mensajeCopiado');
+      msj.style.display = 'block';
+      setTimeout(() => {
+        msj.style.display = 'none';
+      }, 3500);
+    });
+  }
+</script>
 
 </body>
 
